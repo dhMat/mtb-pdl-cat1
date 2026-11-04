@@ -984,8 +984,8 @@ cy_en_flashdrv_status_t Cy_Flash_EraseResume(const cy_stc_flash_eraseresume_conf
     /* Prepares arguments to be passed to SROM API */
     un_srom_api_args_t apiArgs = {{ 0UL }};
     apiArgs.EraseResume.arg0.opcode   = (uint32_t)CY_SROM_OP_FLASH_ERASE_RESUME;
-    apiArgs.EraseResume.arg0.blocking = (uint32_t)config->intrMask;
-    apiArgs.EraseResume.arg0.intrmask = (uint32_t)config->blocking;
+    apiArgs.EraseResume.arg0.blocking = (uint32_t)config->blocking;
+    apiArgs.EraseResume.arg0.intrmask = (uint32_t)config->intrMask;
 
     /* Call SROM API with blocking mode */
     un_srom_api_resps_t apiResp = {{ 0UL }};
